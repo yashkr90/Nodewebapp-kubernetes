@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodewebapp
+spec:
+  selector:
+    matchLabels:
+      app: nodewebapp
+  template:
+    metadata:
+      labels:
+        app: nodewebapp
+    spec:
+      containers:
+      - name: nodewebapp
+        image: yashkr90/nodewebapp:0.1
+        ports:
+        - containerPort: 3000
